@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
 import {
   ProSidebar,
   Menu,
@@ -13,7 +12,11 @@ import {
 import { FaGem, FaList, FaGithub } from "react-icons/fa";
 import './HomePage.css'
 
+import EconomicCalendar from "../Functionalities/EconomicCalendar/EconomicCalendar";
+
 const HomePage = () => {
+
+  let [key, setKey] = useState([])
   
   const headerStyle = {
     padding: "24px",
@@ -25,38 +28,39 @@ const HomePage = () => {
     whiteSpace: "noWrap",
   };
 
+  const handler = (e) => {
+    setKey(e.currentTarget.id)
+  }
+
+
   return (
     <div className='sidebar'>
-        <ProSidebar width={270}>
+      <ProSidebar width={270}>
         <SidebarHeader style={headerStyle}>Sidebar Example</SidebarHeader>
         <SidebarContent>
-            <Menu iconShape="circle">
+          <Menu iconShape="circle">
             <MenuItem icon={<FaList />}>New</MenuItem>
             <MenuItem icon={<FaGem />}>Components</MenuItem>
-            </Menu>
-            <Menu iconShape="circle">
-            <SubMenu
-                suffix={<span className="badge yellow">1</span>}
-                title="Macro Market"
-            >
-                <MenuItem> Economic Event Calendar <Link to='/economic_calendar/' /></MenuItem>
+          </Menu>
+          <Menu iconShape="circle">
+            <SubMenu suffix={<span className="badge yellow">1</span>} title="Macro Market">
+              <MenuItem id='Economic Event Calendar' onClick={handler}> Economic Event Calendar </MenuItem>
             </SubMenu>
-            </Menu>
+          </Menu>
         </SidebarContent>
         <SidebarFooter style={{ textAlign: "center" }}>
-            <div className="sidebar-btn-wrapper">
-            <a
-                href="https://www.github.com"
-                target="_blank"
-                className="sidebar-btn"
-                rel="noopener noreferrer"
-            >
-                <FaGithub />
-                <span>Github</span>
+          <div className="sidebar-btn-wrapper">
+            <a href="https://www.github.com" target="_blank" className="sidebar-btn" rel="noopener noreferrer">
+              <FaGithub />
+              <span>Github</span>
             </a>
-            </div>
+          </div>
         </SidebarFooter>
-        </ProSidebar>
+      </ProSidebar>
+      <>
+        {key === 'Economic Event Calendar' && <EconomicCalendar/>}
+        {key === 'ttt' && <EconomicCalendar/>}
+      </>
     </div>
   );
 }

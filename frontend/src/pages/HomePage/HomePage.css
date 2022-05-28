@@ -2,7 +2,9 @@
 
 .sidebar {
     height: 100vh;
-    position: absolute;
+    width: 100%;
+    display: flex;
+   
 }
 
 .sidebar-btn-wrapper {
