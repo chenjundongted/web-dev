@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './EconomicCalendar.css'
-import 'antd/dist/antd.css'
+import 'antd/dist/antd.min.css'
 import { Table } from 'antd'
 
 const EconomicCalendar = () => {

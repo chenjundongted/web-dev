@@ -12,7 +12,8 @@ import {
 import { FaGem, FaList, FaGithub } from "react-icons/fa";
 import './HomePage.css'
 
-import EconomicCalendar from "../Functionalities/EconomicCalendar/EconomicCalendar";
+import EconomicCalendar from "./MacroMarket/EconomicCalendar/EconomicCalendar";
+import RelatedNews from "./SymbolInfo/RelatedNews/RelatedNews";
 
 const HomePage = () => {
 
@@ -47,6 +48,11 @@ const HomePage = () => {
               <MenuItem id='Economic Event Calendar' onClick={handler}> Economic Event Calendar </MenuItem>
             </SubMenu>
           </Menu>
+          <Menu iconShape="circle">
+            <SubMenu suffix={<span className="badge yellow">1</span>} title="Symbols">
+              <MenuItem id='Related News' onClick={handler}> Related News </MenuItem>
+            </SubMenu>
+          </Menu>
         </SidebarContent>
         <SidebarFooter style={{ textAlign: "center" }}>
           <div className="sidebar-btn-wrapper">
@@ -59,7 +65,7 @@ const HomePage = () => {
       </ProSidebar>
       <>
         {key === 'Economic Event Calendar' && <EconomicCalendar/>}
-        {key === 'ttt' && <EconomicCalendar/>}
+        {key === 'Related News' && <RelatedNews/>}
       </>
     </div>
   );
