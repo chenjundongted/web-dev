@@ -10,20 +10,17 @@ const RelatedNews = () => {
   let [symbol, setSymbol] = useState([])
   let [companyName, setCompanyName] = useState('company name')
 
-  const setSessionStorage = () => {
-    console.log('symbol', symbol)
-    if (symbol.length) {
-      sessionStorage.setItem('symbol', symbol)
+  const setSessionStorage = (value) => {
+  
+      sessionStorage.setItem('symbol', value)
       sessionStorage.setItem('companyName', companyName)
-      console.log(1)
-      console.log(sessionStorage)
-    }
+    
   }
 
   // Search
   const onSearch = (value) => {
     setSymbol(value)
-    setSessionStorage()
+    setSessionStorage(value)
   }
 
   // Header
@@ -48,7 +45,6 @@ const RelatedNews = () => {
       setSymbol(sessionStorage.getItem('symbol'))
       setCompanyName(sessionStorage.getItem('companyName'))
     }
-    console.log(symbol)
   }, [])
 
   return (

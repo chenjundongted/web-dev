@@ -14,6 +14,7 @@ import './HomePage.css'
 
 import EconomicCalendar from "./MacroMarket/EconomicCalendar/EconomicCalendar";
 import RelatedNews from "./SymbolInfo/RelatedNews/RelatedNews";
+import Subscription from "./Setting/Subscription/Subscription";
 
 const HomePage = () => {
 
@@ -53,6 +54,11 @@ const HomePage = () => {
               <MenuItem id='Related News' onClick={handler}> Related News </MenuItem>
             </SubMenu>
           </Menu>
+          <Menu iconShape="circle">
+            <SubMenu suffix={<span className="badge yellow">1</span>} title="Setting">
+              <MenuItem id='Subscription' onClick={handler}> Subscription </MenuItem>
+            </SubMenu>
+          </Menu>
         </SidebarContent>
         <SidebarFooter style={{ textAlign: "center" }}>
           <div className="sidebar-btn-wrapper">
@@ -66,6 +72,7 @@ const HomePage = () => {
       <>
         {key === 'Economic Event Calendar' && <EconomicCalendar/>}
         {key === 'Related News' && <RelatedNews/>}
+        {key === 'Subscription' && <Subscription/>}
       </>
     </div>
   );
