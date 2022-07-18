@@ -14,7 +14,12 @@ import './HomePage.css'
 
 import EconomicCalendar from "./MacroMarket/EconomicCalendar/EconomicCalendar";
 import RelatedNews from "./SymbolInfo/RelatedNews/RelatedNews";
-import Subscription from "./Setting/Subscription/Subscription";
+
+import profileImg from '../../icons/profile_picture.jpg';
+import badge1 from '../../icons/badge.png';
+import badge2 from '../../icons/winner.png';
+import badge3 from '../../icons/college.png';
+import badge4 from '../../icons/trophy.png';
 
 const HomePage = () => {
 
@@ -54,25 +59,31 @@ const HomePage = () => {
               <MenuItem id='Related News' onClick={handler}> Related News </MenuItem>
             </SubMenu>
           </Menu>
-          <Menu iconShape="circle">
-            <SubMenu suffix={<span className="badge yellow">1</span>} title="Setting">
-              <MenuItem id='Subscription' onClick={handler}> Subscription </MenuItem>
-            </SubMenu>
-          </Menu>
         </SidebarContent>
         <SidebarFooter style={{ textAlign: "center" }}>
-          <div className="sidebar-btn-wrapper">
-            <a href="https://www.github.com" target="_blank" className="sidebar-btn" rel="noopener noreferrer">
-              <FaGithub />
-              <span>Github</span>
-            </a>
+          <div className="footer">
+            <div className="channel_img">
+              <img className="profile_img" src={profileImg}/>
+            </div>
+            <div className="profile_info">
+              <button className="tier">Diamond VIP</button>
+              <div className="username_badge_flex">
+                <button className="username">TedjdC</button>
+                <div className="badges">
+                  <img className="badge" src={badge1}/>
+                  <img className="badge" src={badge2}/>
+                  <img className="badge" src={badge3}/>
+                  <img className="badge" src={badge4}/>
+                </div>
+              </div>
+              <button className="exp">Next billing date: 07/17/22</button>
+            </div>
           </div>
         </SidebarFooter>
       </ProSidebar>
       <>
         {key === 'Economic Event Calendar' && <EconomicCalendar/>}
         {key === 'Related News' && <RelatedNews/>}
-        {key === 'Subscription' && <Subscription/>}
       </>
     </div>
   );
