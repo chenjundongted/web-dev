@@ -9,17 +9,17 @@ import {
   SidebarFooter
 } from "react-pro-sidebar";
 
-import { FaGem, FaList, FaGithub } from "react-icons/fa";
+import { FaGem, FaList } from "react-icons/fa";
 import './HomePage.css'
 
 import EconomicCalendar from "./MacroMarket/EconomicCalendar/EconomicCalendar";
 import RelatedNews from "./SymbolInfo/RelatedNews/RelatedNews";
 
-import profileImg from '../../icons/profile_picture.jpg';
-import badge1 from '../../icons/badge.png';
-import badge2 from '../../icons/winner.png';
-import badge3 from '../../icons/college.png';
-import badge4 from '../../icons/trophy.png';
+import profileImg from '../../icons/sidebar_profile/profile_picture.jpg';
+import badge1 from '../../icons/sidebar_profile/badge.png';
+import badge2 from '../../icons/sidebar_profile/winner.png';
+import badge3 from '../../icons/sidebar_profile/college.png';
+import badge4 from '../../icons/sidebar_profile/trophy.png';
 
 const HomePage = () => {
 
@@ -63,17 +63,17 @@ const HomePage = () => {
         <SidebarFooter style={{ textAlign: "center" }}>
           <div className="footer">
             <div className="channel_img">
-              <img className="profile_img" src={profileImg}/>
+              <img className="profile_img" src={profileImg} alt="profileImg"/>
             </div>
             <div className="profile_info">
               <button className="tier">Diamond VIP</button>
               <div className="username_badge_flex">
                 <button className="username">TedjdC</button>
                 <div className="badges">
-                  <img className="badge" src={badge1}/>
-                  <img className="badge" src={badge2}/>
-                  <img className="badge" src={badge3}/>
-                  <img className="badge" src={badge4}/>
+                  <img className="badge" src={badge1} alt="badge1"/>
+                  <img className="badge" src={badge2} alt="badge2"/>
+                  <img className="badge" src={badge3} alt="badge3"/>
+                  <img className="badge" src={badge4} alt="badge4"/>
                 </div>
               </div>
               <button className="exp">Next billing date: 07/17/22</button>

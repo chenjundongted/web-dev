@@ -1,3 +1,98 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 71px;
+	width: 100%;
+	border-bottom: 1px solid grey;
+}
+
+.left-flex {
+	display: flex;
+	align-items: center;
+  width: 200px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.logo {
+	width: 145px;
+}
+
+.middle-flex {
+	display: flex;
+	align-items: center;
+  flex: 1;
+	margin-right: 30px;
+}
+
 .search-bar {
-    text-align: center;
+	flex: 1;
+	height: 50px;
+	padding-left: 15px;
+	font-size: 18px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(192, 192, 192);
+	border-radius: 4px;
+	box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar::placeholder {
+	font-size: 16px;
+}
+
+.search-btn {
+	height: 50px;
+	width: 63px;
+	margin-left: -1px;
+}
+
+.search-btn:hover {
+	cursor: pointer;
+}
+
+.search-img {
+	width: 45%;
+}
+
+.right-flex {
+	display: flex;
+	width: 250px;
+	align-items: center;
+	justify-content: space-between;
+	flex-shrink: 0;
+}
+
+.right-flex-btn1 {
+	width: 60px;
+	margin-left: 10px;
+	border: 0;
+	background-color: transparent;
+}
+
+.right-flex-btn2 {
+	width: 60px;
+	border: 0;
+	background-color: transparent;
+}
+
+.right-flex-btn3 {
+	width: 60px;
+	border: 0;
+	background-color: transparent;
+}
+
+.right-flex-btn4 {
+	width: 60px;
+	margin-right: 10px;
+	border: 0;
+	background-color: transparent;
+}
+
+.right-flex-img {
+	width: 60%;
+}
+
+.right-flex-btn1:hover, .right-flex-btn2:hover, .right-flex-btn3:hover, .right-flex-btn4:hover {
+	cursor: pointer;
 }
